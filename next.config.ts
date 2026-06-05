@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next';
 
 const isGitHubPages = process.env.GITHUB_PAGES === 'true';
-const basePath = isGitHubPages ? '/smartbudget-planner' : '';
+const basePath = isGitHubPages ? '/SmartBudget-Planner' : '';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
