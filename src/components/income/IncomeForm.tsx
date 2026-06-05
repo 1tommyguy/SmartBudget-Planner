@@ -193,14 +193,19 @@ const INCOME_TYPES: IncomeType[] = [
 ];
 
 export default function IncomeForm({ incomes, currency, onUpdate }: IncomeFormProps) {
-  // Track draft amounts as strings per type id before they're committed
+  // Local draft state — only committed to parent when user presses Calculate
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(
+    () => new Set(incomes.map((i) => i.id).filter((id) => INCOME_TYPES.some((t) => t.id === id)))
+  );
   const [draftAmounts, setDraftAmounts] = useState<Record<string, string>>(() => {
     const map: Record<string, string> = {};
     incomes.forEach((inc) => {
-      map[inc.id] = String(inc.amount);
+      if (inc.amount > 0) map[inc.id] = String(inc.amount);
     });
     return map;
   });
+  const [isDirty, setIsDirty] = useState(false);
+  const [justCalculated, setJustCalculated] = useState(false);
 
   const currencySymbol = new Intl.NumberFormat('en-US', { style: 'currency', currency, maximumFractionDigits: 0 })
     .format(0)
@@ -212,39 +217,51 @@ export default function IncomeForm({ incomes, currency, onUpdate }: IncomeFormPr
   const formatCurrency = (amount: number) =>
     new Intl.NumberFormat('en-US', { style: 'currency', currency, maximumFractionDigits: 0 }).format(amount);
 
-  const isSelected = (typeId: string) => incomes.some((i) => i.id === typeId);
-
-  const getAmount = (typeId: string) =>
-    draftAmounts[typeId] ?? String(incomes.find((i) => i.id === typeId)?.amount ?? '');
-
   const toggleType = (type: IncomeType) => {
-    if (isSelected(type.id)) {
-      // Deselect: remove from incomes
-      onUpdate(incomes.filter((i) => i.id !== type.id));
-      setDraftAmounts((prev) => {
-        const next = { ...prev };
-        delete next[type.id];
-        return next;
-      });
-    } else {
-      // Select: add with 0 amount (user will fill in)
-      onUpdate([...incomes, { id: type.id, name: type.label, amount: 0 }]);
-      setDraftAmounts((prev) => ({ ...prev, [type.id]: '' }));
-    }
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(type.id)) {
+        next.delete(type.id);
+      } else {
+        next.add(type.id);
+      }
+      return next;
+    });
+    setIsDirty(true);
+    setJustCalculated(false);
   };
 
-  const handleAmountChange = (typeId: string, typeName: string, value: string) => {
+  const handleAmountChange = (typeId: string, value: string) => {
     setDraftAmounts((prev) => ({ ...prev, [typeId]: value }));
-    const num = parseFloat(value);
-    if (!isNaN(num) && num >= 0) {
-      onUpdate(
-        incomes.map((i) => (i.id === typeId ? { ...i, amount: num } : i))
-      );
-    }
+    setIsDirty(true);
+    setJustCalculated(false);
   };
 
-  const selectedTypes = INCOME_TYPES.filter((t) => isSelected(t.id));
-  const total = incomes.reduce((sum, i) => sum + i.amount, 0);
+  const handleCalculate = () => {
+    const newIncomes: IncomeSource[] = [];
+    selectedIds.forEach((typeId) => {
+      const type = INCOME_TYPES.find((t) => t.id === typeId);
+      if (!type) return;
+      const amount = parseFloat(draftAmounts[typeId] || '0');
+      if (!isNaN(amount) && amount > 0) {
+        newIncomes.push({ id: typeId, name: type.label, amount });
+      }
+    });
+    onUpdate(newIncomes);
+    setIsDirty(false);
+    setJustCalculated(true);
+    setTimeout(() => setJustCalculated(false), 2500);
+  };
+
+  const selectedTypes = INCOME_TYPES.filter((t) => selectedIds.has(t.id));
+  const draftTotal = Array.from(selectedIds).reduce((sum, id) => {
+    const n = parseFloat(draftAmounts[id] || '0');
+    return sum + (isNaN(n) ? 0 : n);
+  }, 0);
+  const hasAnyAmount = Array.from(selectedIds).some((id) => {
+    const n = parseFloat(draftAmounts[id] || '0');
+    return !isNaN(n) && n > 0;
+  });
 
   return (
     <Card>
@@ -252,14 +269,14 @@ export default function IncomeForm({ incomes, currency, onUpdate }: IncomeFormPr
       <div className="mb-5">
         <h3 className="text-base font-semibold text-gray-900 dark:text-white">Income Sources</h3>
         <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-          Select all income types that apply to you, then enter the monthly amount.
+          Step 1 — Select your income types. Step 2 — Enter monthly amounts. Step 3 — Press <strong>Calculate</strong>.
         </p>
       </div>
 
       {/* Income Type Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mb-5">
         {INCOME_TYPES.map((type) => {
-          const selected = isSelected(type.id);
+          const selected = selectedIds.has(type.id);
           return (
             <button
               key={type.id}
@@ -315,8 +332,8 @@ export default function IncomeForm({ incomes, currency, onUpdate }: IncomeFormPr
                   type="number"
                   min="0"
                   placeholder="0"
-                  value={getAmount(type.id)}
-                  onChange={(e) => handleAmountChange(type.id, type.label, e.target.value)}
+                  value={draftAmounts[type.id] ?? ''}
+                  onChange={(e) => handleAmountChange(type.id, e.target.value)}
                   className="w-full pl-6 pr-3 py-2 text-sm font-semibold text-right text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400"
                 />
               </div>
@@ -335,11 +352,52 @@ export default function IncomeForm({ incomes, currency, onUpdate }: IncomeFormPr
         </div>
       )}
 
-      {/* Total */}
-      {total > 0 && (
-        <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
-          <span className="text-sm font-semibold text-gray-600 dark:text-gray-300">Total Monthly Income</span>
-          <span className="text-base font-bold text-emerald-600 dark:text-emerald-400">{formatCurrency(total)}</span>
+      {/* Calculate button + result */}
+      {selectedTypes.length > 0 && (
+        <div className="pt-4 border-t border-gray-100 dark:border-gray-700 space-y-3">
+          {/* Draft total preview */}
+          {draftTotal > 0 && (
+            <div className="flex items-center justify-between text-sm">
+              <span className="text-gray-500 dark:text-gray-400">Estimated total</span>
+              <span className="font-semibold text-gray-700 dark:text-gray-300">{formatCurrency(draftTotal)}</span>
+            </div>
+          )}
+
+          {/* Calculate button */}
+          <button
+            onClick={handleCalculate}
+            disabled={!hasAnyAmount}
+            className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold text-sm transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
+              justCalculated
+                ? 'bg-emerald-500 text-white shadow-md shadow-emerald-200 dark:shadow-emerald-900/30'
+                : hasAnyAmount
+                ? 'bg-indigo-600 hover:bg-indigo-700 active:scale-[0.98] text-white shadow-md shadow-indigo-200 dark:shadow-indigo-900/30'
+                : 'bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'
+            }`}
+          >
+            {justCalculated ? (
+              <>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+                Budget Updated!
+              </>
+            ) : (
+              <>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                Calculate Budget
+              </>
+            )}
+          </button>
+
+          {/* Hint */}
+          {isDirty && !justCalculated && hasAnyAmount && (
+            <p className="text-xs text-center text-amber-600 dark:text-amber-400">
+              Press Calculate to update your dashboard
+            </p>
+          )}
         </div>
       )}
     </Card>
