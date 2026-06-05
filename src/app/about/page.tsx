@@ -14,16 +14,6 @@ export default function AboutPage() {
     { icon: '🔒', title: 'Privacy First', desc: 'All data stored locally in your browser — nothing sent to any server.' },
   ];
 
-  const techStack = [
-    { name: 'Next.js 14', desc: 'React framework with App Router', color: 'bg-black text-white' },
-    { name: 'TypeScript', desc: 'Type-safe development', color: 'bg-blue-600 text-white' },
-    { name: 'Tailwind CSS', desc: 'Utility-first styling', color: 'bg-cyan-500 text-white' },
-    { name: 'Recharts', desc: 'Responsive chart library', color: 'bg-green-600 text-white' },
-    { name: 'jsPDF', desc: 'PDF generation', color: 'bg-red-600 text-white' },
-    { name: 'next-themes', desc: 'Dark mode support', color: 'bg-purple-600 text-white' },
-    { name: 'localStorage', desc: 'Client-side data storage', color: 'bg-amber-600 text-white' },
-  ];
-
   const steps = [
     {
       step: '1',
@@ -148,24 +138,6 @@ export default function AboutPage() {
                 </h4>
                 <p className="text-sm text-gray-500 dark:text-gray-400">{step.desc}</p>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Tech Stack */}
-      <div className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Built With</h2>
-        <div className="flex flex-wrap gap-3">
-          {techStack.map((tech) => (
-            <div
-              key={tech.name}
-              className="flex items-center gap-2 px-3 py-2 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700"
-            >
-              <span className={`text-xs font-bold px-2 py-0.5 rounded-lg ${tech.color}`}>
-                {tech.name}
-              </span>
-              <span className="text-xs text-gray-500 dark:text-gray-400">{tech.desc}</span>
             </div>
           ))}
         </div>
