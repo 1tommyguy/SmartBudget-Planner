@@ -23,9 +23,8 @@ const CURRENCIES = [
 
 export default function SettingsPage() {
   const { theme, setTheme } = useTheme();
-  const { userData, summary, updateCurrency, resetToDemo, clearAllData } = useFinancialData();
+  const { userData, summary, updateCurrency, clearAllData } = useFinancialData();
   const [showClearModal, setShowClearModal] = useState(false);
-  const [showResetModal, setShowResetModal] = useState(false);
   const [pdfLoading, setPdfLoading] = useState(false);
   const [savedCurrency, setSavedCurrency] = useState(false);
 
@@ -155,25 +154,6 @@ export default function SettingsPage() {
         {/* Data Management */}
         <Card title="Data Management">
           <div className="space-y-4">
-            <div className="flex items-start justify-between gap-4 p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/30 rounded-xl">
-              <div>
-                <h4 className="text-sm font-semibold text-amber-800 dark:text-amber-300">
-                  Reset to Demo Data
-                </h4>
-                <p className="text-xs text-amber-700 dark:text-amber-400 mt-1">
-                  Replace all current data with realistic demo data to explore the app features.
-                </p>
-              </div>
-              <Button
-                variant="secondary"
-                size="sm"
-                onClick={() => setShowResetModal(true)}
-                className="flex-shrink-0"
-              >
-                Reset
-              </Button>
-            </div>
-
             <div className="flex items-start justify-between gap-4 p-4 bg-rose-50 dark:bg-rose-900/20 border border-rose-200 dark:border-rose-800/30 rounded-xl">
               <div>
                 <h4 className="text-sm font-semibold text-rose-800 dark:text-rose-300">
@@ -251,33 +231,6 @@ export default function SettingsPage() {
         </div>
       </Modal>
 
-      {/* Reset to Demo Confirmation Modal */}
-      <Modal
-        isOpen={showResetModal}
-        onClose={() => setShowResetModal(false)}
-        title="Reset to Demo Data?"
-        size="sm"
-      >
-        <div className="space-y-4">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            This will replace your current data with demo data. Your existing data will be lost.
-          </p>
-          <div className="flex gap-3">
-            <Button variant="secondary" onClick={() => setShowResetModal(false)} className="flex-1">
-              Cancel
-            </Button>
-            <Button
-              onClick={() => {
-                resetToDemo();
-                setShowResetModal(false);
-              }}
-              className="flex-1"
-            >
-              Reset to Demo
-            </Button>
-          </div>
-        </div>
-      </Modal>
     </div>
   );
 }
