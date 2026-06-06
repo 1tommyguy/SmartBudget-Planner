@@ -1,0 +1,143 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="nav2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="s2">
+      <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#00000012"/>
+    </filter>
+  </defs>
+
+  <!-- Window -->
+  <rect width="1200" height="720" rx="14" fill="#e5e7eb"/>
+  <rect width="1200" height="46" rx="14" fill="#d1d5db"/>
+  <rect y="34" width="1200" height="12" fill="#d1d5db"/>
+  <circle cx="26" cy="23" r="7" fill="#ef4444"/>
+  <circle cx="50" cy="23" r="7" fill="#f59e0b"/>
+  <circle cx="74" cy="23" r="7" fill="#22c55e"/>
+  <rect x="170" y="10" width="860" height="26" rx="13" fill="#e5e7eb"/>
+  <text x="600" y="27" text-anchor="middle" font-size="12" fill="#9ca3af">🔒  1tommyguy.github.io/SmartBudget-Planner/dashboard</text>
+
+  <!-- Page bg -->
+  <rect y="46" width="1200" height="674" fill="#f9fafb"/>
+
+  <!-- Navbar -->
+  <rect y="46" width="1200" height="58" fill="url(#nav2)"/>
+  <text x="70" y="80" font-weight="700" font-size="17" fill="white">Smart<tspan fill="#a5b4fc">Budget</tspan> Planner</text>
+  <text x="870" y="80" font-size="14" fill="rgba(255,255,255,0.95)" font-weight="600">Dashboard</text>
+  <text x="960" y="80" font-size="14" fill="rgba(255,255,255,0.65)">Settings</text>
+  <text x="1040" y="80" font-size="14" fill="rgba(255,255,255,0.65)">About</text>
+
+  <!-- Dashboard tab bar -->
+  <rect y="104" width="1200" height="46" fill="white" stroke="#f3f4f6" stroke-width="1"/>
+  <!-- Active: Income tab -->
+  <rect x="36" y="104" width="100" height="46" fill="white"/>
+  <line x1="36" y1="148" x2="136" y2="148" stroke="#4f46e5" stroke-width="3"/>
+  <text x="86" y="132" text-anchor="middle" font-size="14" fill="#4f46e5" font-weight="600">Income</text>
+  <text x="246" y="132" text-anchor="middle" font-size="14" fill="#9ca3af">Expenses</text>
+  <text x="376" y="132" text-anchor="middle" font-size="14" fill="#9ca3af">Goals</text>
+  <text x="486" y="132" text-anchor="middle" font-size="14" fill="#9ca3af">Debts</text>
+
+  <!-- Section heading -->
+  <text x="36" y="196" font-weight="700" font-size="20" fill="#111827">Income Sources</text>
+  <text x="36" y="218" font-size="13" fill="#6b7280">Select all income types that apply to you, then enter amounts and press Calculate.</text>
+
+  <!-- ── INCOME TYPE CARDS (4×3 grid) ── -->
+
+  <!-- Row 1 -->
+  <!-- Salary (SELECTED) -->
+  <rect x="36" y="234" width="264" height="80" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2" filter="url(#s2)"/>
+  <rect x="56" y="254" width="36" height="36" rx="10" fill="#6366f1"/>
+  <text x="74" y="278" text-anchor="middle" font-size="20">💼</text>
+  <text x="104" y="265" font-size="14" fill="#3730a3" font-weight="700">Salary</text>
+  <text x="104" y="282" font-size="11" fill="#6366f1">Monthly pay from employer</text>
+  <!-- Amount input (selected) -->
+  <rect x="196" y="254" width="88" height="32" rx="8" fill="white" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="214" y="275" font-size="13" fill="#374151" font-weight="600">$4,500</text>
+  <!-- Check -->
+  <circle cx="272" cy="242" r="10" fill="#4f46e5"/>
+  <text x="272" y="247" text-anchor="middle" font-size="12" fill="white">✓</text>
+
+  <!-- Freelance (SELECTED) -->
+  <rect x="316" y="234" width="264" height="80" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2" filter="url(#s2)"/>
+  <rect x="336" y="254" width="36" height="36" rx="10" fill="#8b5cf6"/>
+  <text x="354" y="278" text-anchor="middle" font-size="20">💻</text>
+  <text x="384" y="265" font-size="14" fill="#3730a3" font-weight="700">Freelance</text>
+  <text x="384" y="282" font-size="11" fill="#6366f1">Contract &amp; consulting work</text>
+  <rect x="476" y="254" width="88" height="32" rx="8" fill="white" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="494" y="275" font-size="13" fill="#374151" font-weight="600">$800</text>
+  <circle cx="552" cy="242" r="10" fill="#4f46e5"/>
+  <text x="552" y="247" text-anchor="middle" font-size="12" fill="white">✓</text>
+
+  <!-- Business (unselected) -->
+  <rect x="596" y="234" width="264" height="80" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1.5" filter="url(#s2)"/>
+  <rect x="616" y="254" width="36" height="36" rx="10" fill="#fef3c7"/>
+  <text x="634" y="278" text-anchor="middle" font-size="20">🏢</text>
+  <text x="664" y="265" font-size="14" fill="#374151" font-weight="600">Business</text>
+  <text x="664" y="282" font-size="11" fill="#9ca3af">Self-employed income</text>
+  <rect x="756" y="254" width="88" height="32" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="774" y="275" font-size="13" fill="#d1d5db">$0.00</text>
+
+  <!-- Investment (unselected) -->
+  <rect x="876" y="234" width="288" height="80" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1.5" filter="url(#s2)"/>
+  <rect x="896" y="254" width="36" height="36" rx="10" fill="#d1fae5"/>
+  <text x="914" y="278" text-anchor="middle" font-size="20">📈</text>
+  <text x="944" y="265" font-size="14" fill="#374151" font-weight="600">Investment</text>
+  <text x="944" y="282" font-size="11" fill="#9ca3af">Dividends &amp; returns</text>
+  <rect x="1048" y="254" width="88" height="32" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="1066" y="275" font-size="13" fill="#d1d5db">$0.00</text>
+
+  <!-- Row 2 -->
+  <!-- Rental (unselected) -->
+  <rect x="36" y="330" width="264" height="80" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1.5" filter="url(#s2)"/>
+  <rect x="56" y="350" width="36" height="36" rx="10" fill="#ede9fe"/>
+  <text x="74" y="374" text-anchor="middle" font-size="20">🏠</text>
+  <text x="104" y="361" font-size="14" fill="#374151" font-weight="600">Rental</text>
+  <text x="104" y="378" font-size="11" fill="#9ca3af">Property rental income</text>
+  <rect x="196" y="350" width="88" height="32" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="214" y="371" font-size="13" fill="#d1d5db">$0.00</text>
+
+  <!-- Side Hustle (unselected) -->
+  <rect x="316" y="330" width="264" height="80" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1.5" filter="url(#s2)"/>
+  <rect x="336" y="350" width="36" height="36" rx="10" fill="#fce7f3"/>
+  <text x="354" y="374" text-anchor="middle" font-size="20">🛒</text>
+  <text x="384" y="361" font-size="14" fill="#374151" font-weight="600">Side Hustle</text>
+  <text x="384" y="378" font-size="11" fill="#9ca3af">Reselling, gigs &amp; extras</text>
+  <rect x="476" y="350" width="88" height="32" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="494" y="371" font-size="13" fill="#d1d5db">$0.00</text>
+
+  <!-- Pension (unselected) -->
+  <rect x="596" y="330" width="264" height="80" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1.5" filter="url(#s2)"/>
+  <rect x="616" y="350" width="36" height="36" rx="10" fill="#e0f2fe"/>
+  <text x="634" y="374" text-anchor="middle" font-size="20">🧓</text>
+  <text x="664" y="361" font-size="14" fill="#374151" font-weight="600">Pension</text>
+  <text x="664" y="378" font-size="11" fill="#9ca3af">Retirement &amp; pension pay</text>
+  <rect x="756" y="350" width="88" height="32" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="774" y="371" font-size="13" fill="#d1d5db">$0.00</text>
+
+  <!-- Gov Benefits (unselected) -->
+  <rect x="876" y="330" width="288" height="80" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1.5" filter="url(#s2)"/>
+  <rect x="896" y="350" width="36" height="36" rx="10" fill="#dcfce7"/>
+  <text x="914" y="374" text-anchor="middle" font-size="20">🏛️</text>
+  <text x="944" y="361" font-size="14" fill="#374151" font-weight="600">Gov. Benefits</text>
+  <text x="944" y="378" font-size="11" fill="#9ca3af">State allowances &amp; grants</text>
+  <rect x="1048" y="350" width="88" height="32" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="1066" y="371" font-size="13" fill="#d1d5db">$0.00</text>
+
+  <!-- Hint text -->
+  <text x="36" y="442" font-size="13" fill="#f59e0b" font-weight="500">● Edit your amounts, then press Calculate to update your dashboard</text>
+
+  <!-- Total row -->
+  <rect x="36" y="456" width="1128" height="56" rx="12" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="56" y="489" font-size="14" fill="#374151" font-weight="600">Selected income sources: 2</text>
+  <text x="900" y="484" text-anchor="end" font-size="13" fill="#6b7280">Monthly Total:</text>
+  <text x="1020" y="484" text-anchor="end" font-weight="700" font-size="18" fill="#059669">$5,300</text>
+
+  <!-- Calculate button -->
+  <rect x="1044" y="460" width="120" height="44" rx="12" fill="#4f46e5"/>
+  <text x="1104" y="487" text-anchor="middle" font-size="14" fill="white" font-weight="700">Calculate</text>
+
+  <!-- More income types row (3 more shown greyed) -->
+  <text x="36" y="540" font-size="12" fill="#9ca3af">+ 4 more income types: Child Support · Royalties · Crypto · Other</text>
+</svg>

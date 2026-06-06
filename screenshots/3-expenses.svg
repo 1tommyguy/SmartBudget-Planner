@@ -1,0 +1,153 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="nav3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#f8faff"/>
+    </linearGradient>
+    <filter id="s3">
+      <feDropShadow dx="0" dy="4" stdDeviation="16" flood-color="#6366f120"/>
+    </filter>
+    <filter id="s3b">
+      <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#00000010"/>
+    </filter>
+  </defs>
+
+  <!-- Window -->
+  <rect width="1200" height="720" rx="14" fill="#e5e7eb"/>
+  <rect width="1200" height="46" rx="14" fill="#d1d5db"/>
+  <rect y="34" width="1200" height="12" fill="#d1d5db"/>
+  <circle cx="26" cy="23" r="7" fill="#ef4444"/>
+  <circle cx="50" cy="23" r="7" fill="#f59e0b"/>
+  <circle cx="74" cy="23" r="7" fill="#22c55e"/>
+  <rect x="170" y="10" width="860" height="26" rx="13" fill="#e5e7eb"/>
+  <text x="600" y="27" text-anchor="middle" font-size="12" fill="#9ca3af">🔒  1tommyguy.github.io/SmartBudget-Planner/dashboard</text>
+
+  <!-- Page bg -->
+  <rect y="46" width="1200" height="674" fill="#f9fafb"/>
+
+  <!-- Navbar -->
+  <rect y="46" width="1200" height="58" fill="url(#nav3)"/>
+  <text x="70" y="80" font-weight="700" font-size="17" fill="white">Smart<tspan fill="#a5b4fc">Budget</tspan> Planner</text>
+  <text x="870" y="80" font-size="14" fill="rgba(255,255,255,0.95)" font-weight="600">Dashboard</text>
+  <text x="960" y="80" font-size="14" fill="rgba(255,255,255,0.65)">Settings</text>
+  <text x="1040" y="80" font-size="14" fill="rgba(255,255,255,0.65)">About</text>
+
+  <!-- Dashboard tab bar -->
+  <rect y="104" width="1200" height="46" fill="white" stroke="#f3f4f6" stroke-width="1"/>
+  <text x="86" y="132" text-anchor="middle" font-size="14" fill="#9ca3af">Income</text>
+  <!-- Active: Expenses tab -->
+  <rect x="146" y="104" width="114" height="46" fill="white"/>
+  <line x1="146" y1="148" x2="260" y2="148" stroke="#4f46e5" stroke-width="3"/>
+  <text x="203" y="132" text-anchor="middle" font-size="14" fill="#4f46e5" font-weight="600">Expenses</text>
+  <text x="376" y="132" text-anchor="middle" font-size="14" fill="#9ca3af">Goals</text>
+  <text x="486" y="132" text-anchor="middle" font-size="14" fill="#9ca3af">Debts</text>
+
+  <!-- ── MAIN CONTENT: TWO COLUMN LAYOUT ── -->
+
+  <!-- LEFT: Q&A WIZARD CARD (centered, prominent) -->
+  <rect x="60" y="168" width="740" height="490" rx="18" fill="white" filter="url(#s3)"/>
+
+  <!-- Progress bar area -->
+  <text x="90" y="204" font-size="13" fill="#6b7280">Step 3 of 9</text>
+  <text x="700" y="204" text-anchor="end" font-size="13" fill="#6b7280">Transport</text>
+
+  <!-- Progress track -->
+  <rect x="90" y="214" width="680" height="8" rx="4" fill="#f3f4f6"/>
+  <!-- Progress fill: 3/9 ≈ 33% = 224px -->
+  <rect x="90" y="214" width="224" height="8" rx="4" fill="#6366f1"/>
+
+  <!-- Step dots -->
+  <circle cx="90" cy="218" r="6" fill="#4f46e5"/>
+  <circle cx="175" cy="218" r="6" fill="#4f46e5"/>
+  <circle cx="260" cy="218" r="6" fill="#4f46e5"/>
+  <circle cx="345" cy="218" r="5" fill="#e5e7eb"/>
+  <circle cx="430" cy="218" r="5" fill="#e5e7eb"/>
+  <circle cx="515" cy="218" r="5" fill="#e5e7eb"/>
+  <circle cx="600" cy="218" r="5" fill="#e5e7eb"/>
+  <circle cx="685" cy="218" r="5" fill="#e5e7eb"/>
+  <circle cx="770" cy="218" r="5" fill="#e5e7eb"/>
+
+  <!-- Question card -->
+  <rect x="90" y="244" width="680" height="210" rx="16" fill="url(#cardGrad)" stroke="#dbeafe" stroke-width="1.5"/>
+
+  <!-- Emoji -->
+  <text x="430" y="302" text-anchor="middle" font-size="56">🚗</text>
+
+  <!-- Question text -->
+  <text x="430" y="356" text-anchor="middle" font-weight="700" font-size="22" fill="#1e3a5f">How much do you spend on</text>
+  <text x="430" y="382" text-anchor="middle" font-weight="700" font-size="22" fill="#1e3a5f">transport each month?</text>
+
+  <!-- Hint -->
+  <text x="430" y="414" text-anchor="middle" font-size="13" fill="#6b7280">Car payments, fuel, public transport, rideshare</text>
+  <text x="430" y="432" text-anchor="middle" font-size="13" fill="#9ca3af">Enter 0 or skip if this doesn't apply to you.</text>
+
+  <!-- Amount input -->
+  <rect x="150" y="472" width="560" height="56" rx="14" fill="white" stroke="#6366f1" stroke-width="2"/>
+  <text x="185" y="508" font-size="14" fill="#6b7280">$</text>
+  <text x="210" y="508" font-size="18" fill="#111827" font-weight="600">350</text>
+  <!-- Cursor blink -->
+  <rect x="247" y="490" width="2" height="24" rx="1" fill="#6366f1"/>
+
+  <!-- Buttons -->
+  <rect x="150" y="548" width="260" height="52" rx="14" fill="white" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="280" y="579" text-anchor="middle" font-size="15" fill="#6b7280">← Back</text>
+
+  <rect x="450" y="548" width="260" height="52" rx="14" fill="#4f46e5"/>
+  <text x="580" y="579" text-anchor="middle" font-size="15" fill="white" font-weight="700">Next →</text>
+
+  <!-- Skip link -->
+  <text x="430" y="626" text-anchor="middle" font-size="13" fill="#9ca3af">Skip this question</text>
+
+  <!-- Answered so far chips -->
+  <text x="90" y="666" font-size="12" fill="#9ca3af" font-weight="500">Answered so far:</text>
+  <rect x="200" y="652" width="84" height="24" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="242" y="669" text-anchor="middle" font-size="11" fill="#3b82f6">🏠 $1,200</text>
+  <rect x="294" y="652" width="80" height="24" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="334" y="669" text-anchor="middle" font-size="11" fill="#16a34a">🍽️ $450</text>
+
+  <!-- RIGHT: SUMMARY SIDEBAR -->
+  <rect x="828" y="168" width="336" height="490" rx="18" fill="white" filter="url(#s3b)"/>
+  <text x="852" y="205" font-weight="600" font-size="15" fill="#111827">Answered so far</text>
+  <line x1="852" y1="216" x2="1140" y2="216" stroke="#f3f4f6" stroke-width="1"/>
+
+  <!-- Answered items -->
+  <rect x="852" y="226" width="292" height="52" rx="10" fill="#eff6ff"/>
+  <text x="872" y="250" font-size="22">🏠</text>
+  <text x="906" y="246" font-size="13" fill="#374151" font-weight="600">Housing</text>
+  <text x="906" y="264" font-size="12" fill="#6b7280">Rent / mortgage</text>
+  <text x="1120" y="257" text-anchor="end" font-size="14" fill="#2563eb" font-weight="700">$1,200</text>
+
+  <rect x="852" y="288" width="292" height="52" rx="10" fill="#f0fdf4"/>
+  <text x="872" y="312" font-size="22">🍽️</text>
+  <text x="906" y="308" font-size="13" fill="#374151" font-weight="600">Food &amp; Groceries</text>
+  <text x="906" y="326" font-size="12" fill="#6b7280">Dining &amp; groceries</text>
+  <text x="1120" y="319" text-anchor="end" font-size="14" fill="#059669" font-weight="700">$450</text>
+
+  <!-- Currently answering -->
+  <rect x="852" y="350" width="292" height="52" rx="10" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+  <text x="872" y="374" font-size="22">🚗</text>
+  <text x="906" y="370" font-size="13" fill="#374151" font-weight="600">Transport</text>
+  <text x="906" y="388" font-size="12" fill="#f59e0b">Answering now...</text>
+
+  <!-- Remaining items (locked) -->
+  <rect x="852" y="412" width="292" height="38" rx="8" fill="#f9fafb"/>
+  <text x="872" y="435" font-size="14" fill="#d1d5db">⚡  Utilities</text>
+
+  <rect x="852" y="458" width="292" height="38" rx="8" fill="#f9fafb"/>
+  <text x="872" y="481" font-size="14" fill="#d1d5db">🎬  Entertainment</text>
+
+  <rect x="852" y="504" width="292" height="38" rx="8" fill="#f9fafb"/>
+  <text x="872" y="527" font-size="14" fill="#d1d5db">❤️  Health</text>
+
+  <text x="998" y="568" text-anchor="middle" font-size="12" fill="#d1d5db">+ 3 more questions</text>
+
+  <!-- Running total -->
+  <rect x="852" y="590" width="292" height="56" rx="12" fill="#f5f3ff" stroke="#e9d5ff" stroke-width="1"/>
+  <text x="872" y="616" font-size="12" fill="#6b7280">Running total</text>
+  <text x="872" y="636" font-weight="700" font-size="20" fill="#7c3aed">$1,650</text>
+  <text x="1120" y="636" text-anchor="end" font-size="12" fill="#9ca3af">2 of 9 done</text>
+</svg>

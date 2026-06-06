@@ -1,0 +1,161 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="nav1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="s1">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#00000014"/>
+    </filter>
+  </defs>
+
+  <!-- Window -->
+  <rect width="1200" height="720" rx="14" fill="#e5e7eb"/>
+  <!-- Chrome bar -->
+  <rect width="1200" height="46" rx="14" fill="#d1d5db"/>
+  <rect y="34" width="1200" height="12" fill="#d1d5db"/>
+  <circle cx="26" cy="23" r="7" fill="#ef4444"/>
+  <circle cx="50" cy="23" r="7" fill="#f59e0b"/>
+  <circle cx="74" cy="23" r="7" fill="#22c55e"/>
+  <rect x="170" y="10" width="860" height="26" rx="13" fill="#e5e7eb"/>
+  <text x="600" y="27" text-anchor="middle" font-size="12" fill="#9ca3af">🔒  1tommyguy.github.io/SmartBudget-Planner/dashboard</text>
+
+  <!-- Page bg -->
+  <rect y="46" width="1200" height="674" fill="#f9fafb"/>
+
+  <!-- Navbar -->
+  <rect y="46" width="1200" height="58" fill="url(#nav1)"/>
+  <rect x="28" y="60" width="30" height="30" rx="9" fill="rgba(255,255,255,0.18)"/>
+  <text x="70" y="80" font-weight="700" font-size="17" fill="white">Smart<tspan fill="#a5b4fc">Budget</tspan> Planner</text>
+  <text x="870" y="80" font-size="14" fill="rgba(255,255,255,0.95)" font-weight="600">Dashboard</text>
+  <text x="960" y="80" font-size="14" fill="rgba(255,255,255,0.65)">Settings</text>
+  <text x="1040" y="80" font-size="14" fill="rgba(255,255,255,0.65)">About</text>
+  <!-- Currency badge -->
+  <rect x="1090" y="67" width="88" height="24" rx="12" fill="rgba(255,255,255,0.15)"/>
+  <text x="1134" y="83" text-anchor="middle" font-size="12" fill="white" font-weight="600">$ USD</text>
+
+  <!-- Page heading -->
+  <text x="36" y="142" font-weight="700" font-size="22" fill="#111827">Financial Overview</text>
+  <text x="36" y="163" font-size="13" fill="#9ca3af">Your financial health at a glance</text>
+
+  <!-- ── STAT CARDS ── -->
+  <!-- Income -->
+  <rect x="36" y="180" width="265" height="96" rx="14" fill="white" filter="url(#s1)"/>
+  <rect x="36" y="180" width="265" height="5" rx="3" fill="#10b981"/>
+  <text x="56" y="208" font-size="11" fill="#6b7280" letter-spacing="0.3">TOTAL INCOME</text>
+  <text x="56" y="240" font-weight="700" font-size="28" fill="#059669">$5,500</text>
+  <text x="56" y="262" font-size="11" fill="#9ca3af">per month</text>
+  <circle cx="267" cy="228" r="22" fill="#d1fae5"/>
+  <text x="267" y="235" text-anchor="middle" font-size="18">💰</text>
+
+  <!-- Expenses -->
+  <rect x="317" y="180" width="265" height="96" rx="14" fill="white" filter="url(#s1)"/>
+  <rect x="317" y="180" width="265" height="5" rx="3" fill="#f43f5e"/>
+  <text x="337" y="208" font-size="11" fill="#6b7280" letter-spacing="0.3">TOTAL EXPENSES</text>
+  <text x="337" y="240" font-weight="700" font-size="28" fill="#e11d48">$2,715</text>
+  <text x="337" y="262" font-size="11" fill="#9ca3af">per month</text>
+  <circle cx="548" cy="228" r="22" fill="#ffe4e6"/>
+  <text x="548" y="235" text-anchor="middle" font-size="18">🧾</text>
+
+  <!-- Balance -->
+  <rect x="598" y="180" width="265" height="96" rx="14" fill="white" filter="url(#s1)"/>
+  <rect x="598" y="180" width="265" height="5" rx="3" fill="#3b82f6"/>
+  <text x="618" y="208" font-size="11" fill="#6b7280" letter-spacing="0.3">MONTHLY BALANCE</text>
+  <text x="618" y="240" font-weight="700" font-size="28" fill="#2563eb">$2,785</text>
+  <text x="618" y="262" font-size="11" fill="#10b981">▲ surplus</text>
+  <circle cx="829" cy="228" r="22" fill="#dbeafe"/>
+  <text x="829" y="235" text-anchor="middle" font-size="18">📊</text>
+
+  <!-- Savings Rate -->
+  <rect x="879" y="180" width="285" height="96" rx="14" fill="white" filter="url(#s1)"/>
+  <rect x="879" y="180" width="285" height="5" rx="3" fill="#7c3aed"/>
+  <text x="899" y="208" font-size="11" fill="#6b7280" letter-spacing="0.3">SAVINGS RATE</text>
+  <text x="899" y="240" font-weight="700" font-size="28" fill="#6d28d9">50.6%</text>
+  <text x="899" y="262" font-size="11" fill="#10b981">● Excellent</text>
+  <circle cx="1130" cy="228" r="22" fill="#ede9fe"/>
+  <text x="1130" y="235" text-anchor="middle" font-size="18">🎯</text>
+
+  <!-- ── EXPENSE BREAKDOWN CHART ── -->
+  <rect x="36" y="294" width="710" height="310" rx="14" fill="white" filter="url(#s1)"/>
+  <text x="58" y="328" font-weight="600" font-size="15" fill="#111827">Expense Breakdown</text>
+  <text x="58" y="346" font-size="12" fill="#9ca3af">Monthly spending by category</text>
+
+  <!-- Chart baseline -->
+  <line x1="80" y1="566" x2="700" y2="566" stroke="#f3f4f6" stroke-width="2"/>
+
+  <!-- Housing $1,200 (tallest) -->
+  <rect x="106" y="386" width="72" height="180" rx="7" fill="#6366f1"/>
+  <rect x="106" y="386" width="72" height="180" rx="7" fill="url(#bar1)" opacity="0.15"/>
+  <text x="142" y="376" text-anchor="middle" font-size="12" fill="#4f46e5" font-weight="700">$1,200</text>
+  <text x="142" y="584" text-anchor="middle" font-size="12" fill="#6b7280">Housing</text>
+
+  <!-- Food $450 -->
+  <rect x="206" y="498" width="72" height="68" rx="7" fill="#10b981"/>
+  <text x="242" y="488" text-anchor="middle" font-size="12" fill="#059669" font-weight="700">$450</text>
+  <text x="242" y="584" text-anchor="middle" font-size="12" fill="#6b7280">Food</text>
+
+  <!-- Transport $350 -->
+  <rect x="306" y="513" width="72" height="53" rx="7" fill="#f59e0b"/>
+  <text x="342" y="503" text-anchor="middle" font-size="12" fill="#d97706" font-weight="700">$350</text>
+  <text x="342" y="584" text-anchor="middle" font-size="12" fill="#6b7280">Transport</text>
+
+  <!-- Utilities $215 -->
+  <rect x="406" y="534" width="72" height="32" rx="7" fill="#fbbf24"/>
+  <text x="442" y="524" text-anchor="middle" font-size="12" fill="#92400e" font-weight="700">$215</text>
+  <text x="442" y="584" text-anchor="middle" font-size="12" fill="#6b7280">Utilities</text>
+
+  <!-- Entertainment $150 -->
+  <rect x="506" y="543" width="72" height="23" rx="7" fill="#8b5cf6"/>
+  <text x="542" y="533" text-anchor="middle" font-size="12" fill="#6d28d9" font-weight="700">$150</text>
+  <text x="542" y="584" text-anchor="middle" font-size="12" fill="#6b7280">Entertain.</text>
+
+  <!-- Other $350 -->
+  <rect x="606" y="513" width="72" height="53" rx="7" fill="#94a3b8"/>
+  <text x="642" y="503" text-anchor="middle" font-size="12" fill="#475569" font-weight="700">$350</text>
+  <text x="642" y="584" text-anchor="middle" font-size="12" fill="#6b7280">Other</text>
+
+  <!-- ── HEALTH SCORE CARD ── -->
+  <rect x="762" y="294" width="402" height="310" rx="14" fill="white" filter="url(#s1)"/>
+  <text x="784" y="328" font-weight="600" font-size="15" fill="#111827">Financial Health Score</text>
+
+  <!-- Score donut -->
+  <circle cx="900" cy="450" r="88" fill="none" stroke="#f3f4f6" stroke-width="16"/>
+  <!-- 78% progress: circumference = 2π×88 ≈ 553; 78% ≈ 431 -->
+  <circle cx="900" cy="450" r="88" fill="none" stroke="#7c3aed" stroke-width="16"
+    stroke-dasharray="431 553" stroke-linecap="round"
+    transform="rotate(-90 900 450)"/>
+  <text x="900" y="440" text-anchor="middle" font-weight="800" font-size="42" fill="#111827">78</text>
+  <text x="900" y="468" text-anchor="middle" font-size="16" fill="#7c3aed" font-weight="700">Excellent</text>
+
+  <!-- 50/30/20 section -->
+  <text x="1020" y="370" font-weight="600" font-size="13" fill="#374151">50/30/20 Rule</text>
+
+  <!-- Needs -->
+  <text x="1020" y="398" font-size="12" fill="#6b7280">Needs (50%)</text>
+  <rect x="1020" y="404" width="130" height="10" rx="5" fill="#f3f4f6"/>
+  <rect x="1020" y="404" width="127" height="10" rx="5" fill="#10b981"/>
+  <text x="1158" y="415" font-size="12" fill="#374151" font-weight="600">49%</text>
+
+  <!-- Wants -->
+  <text x="1020" y="438" font-size="12" fill="#6b7280">Wants (30%)</text>
+  <rect x="1020" y="444" width="130" height="10" rx="5" fill="#f3f4f6"/>
+  <rect x="1020" y="444" width="87" height="10" rx="5" fill="#6366f1"/>
+  <text x="1158" y="455" font-size="12" fill="#374151" font-weight="600">20%</text>
+
+  <!-- Savings -->
+  <text x="1020" y="478" font-size="12" fill="#6b7280">Savings (20%)</text>
+  <rect x="1020" y="484" width="130" height="10" rx="5" fill="#f3f4f6"/>
+  <rect x="1020" y="484" width="130" height="10" rx="5" fill="#7c3aed"/>
+  <text x="1158" y="495" font-size="12" fill="#374151" font-weight="600">50%</text>
+
+  <!-- Tip -->
+  <rect x="784" y="528" width="360" height="56" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="800" y="552" font-size="13" fill="#166534" font-weight="600">💡 You're saving over 50% of your income!</text>
+  <text x="800" y="572" font-size="11" fill="#16a34a">Consider investing your surplus to grow your wealth.</text>
+
+  <!-- ── FOOTER STRIP ── -->
+  <rect y="660" width="1200" height="60" fill="white" stroke="#f3f4f6" stroke-width="1"/>
+  <text x="36" y="696" font-size="13" fill="#9ca3af">All financial data is stored in your browser only — never sent to any server.</text>
+  <rect x="950" y="672" width="180" height="32" rx="16" fill="#111827"/>
+  <text x="960" y="693" font-size="12" fill="white" font-weight="600">⭐ Star on GitHub</text>
+</svg>
