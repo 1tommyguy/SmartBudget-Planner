@@ -64,11 +64,57 @@ export default function Home() {
     },
   ];
 
-  const stats = [
-    { value: '10,000+', label: 'Active Users' },
-    { value: '100%', label: 'Privacy Focused' },
-    { value: '$0', label: 'Forever Free' },
-    { value: '4.9★', label: 'User Rating' },
+  const steps = [
+    {
+      step: '1',
+      color: 'bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400',
+      border: 'border-indigo-200 dark:border-indigo-800/40',
+      emoji: '🌍',
+      title: 'Set Your Currency',
+      desc: 'Go to Settings (top-right menu) and tap your country\'s currency — USD, NGN, GBP, EUR, and more are supported. This changes all amounts across the whole app.',
+      tip: 'Settings → Currency',
+      tipColor: 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300',
+    },
+    {
+      step: '2',
+      color: 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400',
+      border: 'border-emerald-200 dark:border-emerald-800/40',
+      emoji: '💰',
+      title: 'Add Your Income',
+      desc: 'Open the Dashboard and go to the Income tab. Pick the income types that apply to you — salary, freelance, rental, and more — then enter the amounts and press Calculate.',
+      tip: 'Dashboard → Income tab',
+      tipColor: 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300',
+    },
+    {
+      step: '3',
+      color: 'bg-rose-100 dark:bg-rose-900/40 text-rose-600 dark:text-rose-400',
+      border: 'border-rose-200 dark:border-rose-800/40',
+      emoji: '🧾',
+      title: 'Enter Your Expenses',
+      desc: 'Switch to the Expenses tab. Answer a few quick questions about housing, food, transport, and other costs one at a time, then press Calculate when done.',
+      tip: 'Dashboard → Expenses tab',
+      tipColor: 'bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300',
+    },
+    {
+      step: '4',
+      color: 'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400',
+      border: 'border-amber-200 dark:border-amber-800/40',
+      emoji: '🎯',
+      title: 'Set Savings Goals (optional)',
+      desc: 'Under the Goals tab, add a savings target with a name, amount, and deadline. The app automatically calculates how much you need to set aside each month.',
+      tip: 'Dashboard → Goals tab',
+      tipColor: 'bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300',
+    },
+    {
+      step: '5',
+      color: 'bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400',
+      border: 'border-purple-200 dark:border-purple-800/40',
+      emoji: '📊',
+      title: 'Review Your Dashboard',
+      desc: 'See your financial health score, budget breakdown, savings rate, and personalized tips — everything updates the moment you hit Calculate.',
+      tip: 'Dashboard → Overview',
+      tipColor: 'bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300',
+    },
   ];
 
   return (
@@ -103,15 +149,15 @@ export default function Home() {
                 </svg>
                 Get Started Free
               </Link>
-              <Link
-                href="/about"
+              <a
+                href="#how-to-use"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-semibold rounded-2xl hover:bg-white/20 transition-all border border-white/30 backdrop-blur-sm text-lg"
               >
-                Learn More
+                How It Works
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -163,24 +209,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-white dark:bg-gray-800 border-y border-gray-200 dark:border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-indigo-600 dark:text-indigo-400">
-                  {stat.value}
-                </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{stat.label}</p>
+      {/* How to Use — anchor target */}
+      <section id="how-to-use" className="py-20 md:py-28 bg-white dark:bg-gray-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+              Quick Start
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Up and running in 5 minutes
+            </h2>
+            <p className="text-lg text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+              Follow these steps in order and your budget will be ready to go.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {steps.map((s) => (
+              <div
+                key={s.step}
+                className={`flex gap-5 p-5 bg-white dark:bg-gray-800 rounded-2xl border ${s.border} shadow-sm`}
+              >
+                {/* Step number */}
+                <div className={`w-11 h-11 rounded-full ${s.color} flex items-center justify-center flex-shrink-0 font-bold text-sm`}>
+                  {s.step}
+                </div>
+
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    <span className="text-xl">{s.emoji}</span>
+                    <h3 className="text-base font-semibold text-gray-900 dark:text-white">
+                      {s.title}
+                    </h3>
+                    <span className={`text-xs font-medium px-2 py-0.5 rounded-lg ${s.tipColor}`}>
+                      {s.tip}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                    {s.desc}
+                  </p>
+                </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/dashboard"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg"
+            >
+              Open Dashboard
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 bg-gray-50 dark:bg-gray-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -220,7 +308,7 @@ export default function Home() {
             Ready to take control?
           </h2>
           <p className="text-lg text-white/80 mb-8 max-w-xl mx-auto">
-            Start with our demo data and see how powerful SmartBudget can be for your finances.
+            No sign-up. No fees. Your data never leaves your device. Start budgeting in under a minute.
           </p>
           <Link
             href="/dashboard"
