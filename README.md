@@ -1,85 +1,80 @@
+<div align="center">
+
 # SmartBudget Planner
 
-A production-quality personal finance web application built with Next.js 14, TypeScript, and Tailwind CSS. Track income, expenses, savings goals, and debts — all stored locally in your browser for complete privacy.
+**A free, privacy-first personal finance app — no account, no servers, no tracking.**
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20App-indigo?style=for-the-badge)](https://1tommyguy.github.io/SmartBudget-Planner/)
+[![GitHub Stars](https://img.shields.io/github/stars/1tommyguy/SmartBudget-Planner?style=for-the-badge&color=yellow)](https://github.com/1tommyguy/SmartBudget-Planner/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+
+[**→ Try it live**](https://1tommyguy.github.io/SmartBudget-Planner/) &nbsp;•&nbsp; [Report a Bug](https://github.com/1tommyguy/SmartBudget-Planner/issues) &nbsp;•&nbsp; [Request a Feature](https://github.com/1tommyguy/SmartBudget-Planner/issues)
+
+</div>
+
+---
+
+## What is it?
+
+SmartBudget Planner helps you understand where your money goes, set savings goals, and pay off debt — right in your browser. Everything is saved locally; nothing ever touches a server.
+
+- Pick your currency (USD, NGN, GBP, EUR, and more)
+- Choose your income sources from 12 types (salary, freelance, rental, etc.)
+- Answer a quick Q&A wizard to log your monthly expenses
+- Instantly see your financial health score, budget breakdown, and personalised tips
 
 ## Features
 
-- **Financial Dashboard** — Real-time summary cards, expense charts, and balance calculations
-- **Income Tracking** — Add and manage multiple income sources
-- **Expense Management** — Categorize expenses with preset categories and custom entries
-- **Savings Goals** — Set targets with deadlines and automatic monthly savings calculations
-- **Financial Health Score** — 0-100 score based on savings rate, expense ratio, and emergency fund
-- **Emergency Fund Calculator** — 3, 6, and 12-month fund targets with time-to-save estimates
-- **Debt Payoff Estimator** — Interactive slider showing interest savings with extra payments
-- **50/30/20 Budget Rule** — Compare actual spending vs the proven budgeting framework
-- **Personalized Tips** — Dynamic financial advice based on your actual data
-- **PDF & CSV Export** — Professional reports with one click
-- **Dark Mode** — Full dark/light/system theme support
-- **100% Private** — All data stored in browser localStorage, nothing sent to any server
+| Feature | Description |
+|---|---|
+| 📊 Smart Dashboard | Real-time income, expenses, balance, and savings rate cards |
+| 💰 Income Picker | Choose from 12 income types; enter amounts and press Calculate |
+| 🧾 Expense Wizard | Step-by-step Q&A for 9 expense categories with animated transitions |
+| 🎯 Savings Goals | Set targets with deadlines — auto-calculates monthly amount needed |
+| 📈 Financial Health Score | 0–100 score based on savings rate, spending ratio, emergency fund |
+| 🚨 Emergency Fund Calculator | See how long to reach 3, 6, and 12-month fund targets |
+| 💳 Debt Payoff Estimator | Slider shows how extra payments cut interest and time |
+| ⚖️ 50/30/20 Rule | Live comparison of your spending vs the proven framework |
+| 🌍 Multi-currency | USD, EUR, GBP, NGN, CAD, AUD, JPY, INR, BRL, MXN |
+| 🌙 Dark Mode | Light / Dark / System theme toggle |
+| 📄 Export | Download a PDF report or CSV spreadsheet in one click |
+| 🔒 100% Private | All data lives in browser localStorage — zero server contact |
 
-## Tech Stack
+## Getting Started (users)
 
-- [Next.js 14](https://nextjs.org/) — App Router
-- [TypeScript](https://www.typescriptlang.org/) — Type safety
-- [Tailwind CSS](https://tailwindcss.com/) — Styling
-- [Recharts](https://recharts.org/) — Interactive charts
-- [jsPDF](https://github.com/parallax/jsPDF) + [jspdf-autotable](https://github.com/simonbengtsson/jsPDF-AutoTable) — PDF export
-- [next-themes](https://github.com/pacocoursey/next-themes) — Dark mode
-- localStorage — Client-side data persistence
+Just open the live app: **[https://1tommyguy.github.io/SmartBudget-Planner/](https://1tommyguy.github.io/SmartBudget-Planner/)**
 
-## Quick Start
+1. Go to **Settings** → pick your **currency**
+2. Open **Dashboard → Income** → select your income types → enter amounts → **Calculate**
+3. Open **Dashboard → Expenses** → answer the step-by-step questions → **Calculate**
+4. (Optional) Add **Savings Goals** and **Debts**
+5. Read your **financial health score** and tips on the Overview
+
+## Running locally (developers)
 
 ```bash
-# Install dependencies
+git clone https://github.com/1tommyguy/SmartBudget-Planner.git
+cd SmartBudget-Planner
 npm install
-
-# Start development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Deploy to Vercel
+## Tech stack
 
-1. Push this repository to GitHub
-2. Import it on [Vercel](https://vercel.com/new)
-3. Click **Deploy** — no environment variables required
+Next.js · TypeScript · Tailwind CSS · Recharts · jsPDF · next-themes
 
-Or use the Vercel CLI:
+## Contributing
 
-```bash
-npm i -g vercel
-vercel --prod
-```
-
-## Project Structure
-
-```
-src/
-├── app/                  # Next.js App Router pages
-│   ├── layout.tsx        # Root layout with ThemeProvider
-│   ├── page.tsx          # Landing page
-│   ├── dashboard/        # Main dashboard
-│   ├── settings/         # Settings page
-│   └── about/            # About page
-├── components/
-│   ├── layout/           # Navbar, Footer
-│   ├── ui/               # Reusable UI components
-│   ├── dashboard/        # Dashboard widgets
-│   ├── income/           # Income form
-│   ├── expenses/         # Expense form
-│   └── calculators/      # Budget rule & debt payoff
-├── hooks/
-│   ├── useLocalStorage.ts
-│   └── useFinancialData.ts
-├── lib/
-│   ├── calculations.ts   # Pure financial calculation functions
-│   ├── demo-data.ts      # Realistic demo dataset
-│   └── export.ts         # PDF & CSV export utilities
-└── types/
-    └── index.ts          # TypeScript interfaces
-```
+Pull requests are welcome! Open an issue first to discuss major changes.
 
 ## License
 
-MIT License — free to use, modify, and distribute.
+MIT — free to use, fork, and distribute.
+
+---
+
+<div align="center">
+If this project helps you, please consider giving it a ⭐ — it helps others find it too!
+</div>
